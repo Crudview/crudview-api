@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  post "/login", to: "auth#login"
   get "/auth", to: "auth#persist"
+  post "/login", to: "auth#login"
   resources :users, only: [:index, :show, :create, :update]
   resources :restaurants, only: [:index, :show]
   resources :reviews, only: [:index, :show, :create, :update, :destroy]
