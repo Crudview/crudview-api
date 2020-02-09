@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.createt(review_params)
+    @review = Review.create(review_params)
   end
 
   def update

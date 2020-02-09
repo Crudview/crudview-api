@@ -9,6 +9,10 @@
 require "http"
 require "json"
 
+Review.destroy_all
+Restaurant.destroy_all
+User.destroy_all
+
 def search(type, category, location)
   url = "https://api.yelp.com/v3/businesses/search"
   params = {
@@ -29,7 +33,7 @@ new_response = search("asian", "food", "10013")
 
 new_response.each do |restaurant|
   # byebug
-  StoreName.create(
+  Restaurant.create(
     name: restaurant["name"],
     image_url: restaurant["image_url"],
     rating: restaurant["rating"],
@@ -38,3 +42,16 @@ new_response.each do |restaurant|
     phone: restaurant["display_phone"],
   )
 end
+
+# test user
+hami = User.create(username: "Saiko124", password: "ronaldo9")
+first_restaurant = Restaurant.all.first
+
+# byebug
+# testing joiner model
+hami_comment_1 = Review.create(
+  comment: " Rails is dynamic",
+  user: hami,
+  restaurant: first_restaurant,
+
+)
