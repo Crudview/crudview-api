@@ -55,3 +55,9 @@ hami_comment_1 = Review.create(
   restaurant: first_restaurant,
 
 )
+hami_comment_2 = Review.create(
+  comment: " Rails is annoying",
+  user: hami,
+  restaurant: first_restaurant,
+
+)
