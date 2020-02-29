@@ -11,9 +11,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+
     if @user.valid?
       user = @user
-      token = JWT.encode({ user_id: user.id }, secret, "HS256")
+      token = JWT.encode({ user_id: user.id }, ENV["TOKEN_SECRET"], "HS256")
       render json: { user: user, token: token }
     else
       render json: {
@@ -35,9 +36,5 @@ class UsersController < ApplicationController
 
   def user_params
     params.permit(:username, :password)
-  end
-
-  def secret
-    ENV["MY_SECRET"]
   end
 end
