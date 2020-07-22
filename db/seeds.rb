@@ -31,6 +31,7 @@ end
 
 new_response = search("asian", "food", "10013")
 
+byebug
 new_response.each do |restaurant|
   # byebug
   Restaurant.create(
