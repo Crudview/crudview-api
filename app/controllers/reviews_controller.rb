@@ -8,7 +8,6 @@ class ReviewsController < ApplicationController
 
   def show
     render json: @review
-    render json: @review
   end
 
   def create
@@ -17,11 +16,13 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    @review = Review.update(review_params)
+    review = Review.find(params[:id])
+    @review = review.update(review_params)
     render json: @review
   end
 
   def destroy
+    # byebug
     @review.destroy
   end
 
