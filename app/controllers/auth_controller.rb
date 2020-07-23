@@ -1,4 +1,8 @@
 class AuthController < ApplicationController
+  # def hmac_secret
+  #   "secret_tag"
+  # end
+
   def login
     user = User.find_by(username: login_params[:username])
     if user && user.authenticate(login_params[:password])
