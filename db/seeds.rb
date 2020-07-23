@@ -42,22 +42,3 @@ new_response.each do |restaurant|
     phone: restaurant["display_phone"],
   )
 end
-
-# test user
-hami = User.create(username: "Saiko124", password: "ronaldo9")
-first_restaurant = Restaurant.all.first
-
-# byebug
-# testing joiner model
-hami_comment_1 = Review.create(
-  comment: " Rails is dynamic",
-  user: hami,
-  restaurant: first_restaurant,
-
-)
-hami_comment_2 = Review.create(
-  comment: " Rails is annoying",
-  user: hami,
-  restaurant: first_restaurant,
-
-)
