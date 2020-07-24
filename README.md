@@ -1,8 +1,4 @@
-
-
-
-
-#CrudView
+# Crudview
 
 Crudview is acrowd-sourced local business review where users can submit a review of their products or services.
 
