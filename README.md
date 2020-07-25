@@ -21,4 +21,4 @@ I built this application using React/Redux for the frontend and Ruby on Rails fo
 
 
 
-### Webstite Link: [Crudview Demo](https://www.youtube.com/watch?v=p1oKEfkNmiI&feature=youtu.be)
+### Demo Link: [Crudview Demo](https://www.youtube.com/watch?v=p1oKEfkNmiI&feature=youtu.be)
